@@ -20,9 +20,4 @@ class Visitor
   def tall_enough?(threshold)
     @height >= threshold
   end
-
-  def spend_money(cost_of_ride)
-    @spending_money -= cost_of_ride
-  end
-
 end

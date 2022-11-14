@@ -8,7 +8,6 @@ class Ride
     @excitement = attributes[:excitement]
     @total_revenue = 0
     @rider_log = {}
-    #require 'pry' ;binding.pry
   end
 
 
@@ -25,5 +24,7 @@ class Ride
     end
     @total_revenue += admission_fee
     #visitor.spending_money -= @admission_fee
+
+    #returning as undefined method 'spending_money =' for visitor obj
   end
 end
