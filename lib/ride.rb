@@ -7,25 +7,21 @@ class Ride
     @admission_fee = attributes[:admission_fee]
     @excitement = attributes[:excitement]
     @total_revenue = 0
-    @rider_log = []
+    @rider_log = {}
     #require 'pry' ;binding.pry
-    @boarding_riders = []
   end
 
-  def board_rider(visitor_obj)
-    @boarding_riders << visitor_obj
-  end
 
-  def rider_log
-    #keep track of the amount of times each rider goes on a ride
-    #go through the riders in the array
-    #the rider is the key and the amount of times they rode is the value
-    #keep track of the times they rode
-    #the rider is the key and the tims the rode is the value
-    @boarding_riders.each do |visitor|
-      if visitor.name == visitor.name
-      @rider_log[visitor] = @boarding_riders.count
-    end
+  def board_rider(visitor)
+    #board the riders one by one
+    #the visitor will be the key of the hash and the times they boarded
+    #is the value
+    #get the visitor object and set that to they key of rider rider_log
+    #increment their visits by one each time they board
+    if rider_log.include?(visitor)
+      @rider_log[visitor] += 1
+    else
+      @rider_log[visitor] = 1
     end
   end
 end
