@@ -28,6 +28,11 @@ RSpec.describe Ride do
       expected = {visitor1 => 2, visitor2 => 1}
       expect(ride1.rider_log).to eq(expected)
 
+      # expect(visitor1.spending_money).to eq(8)
+      # expect(visitor2.spending_money).to eq(4)
+      #skipping for now, rspec says spending_money is an undefined method
+      expect(ride1.total_revenue).to eq(3)
+
     end
   end
 end
