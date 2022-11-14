@@ -11,4 +11,15 @@ RSpec.describe Visitor do
     expect(visitor1.spending_money).to eq(10)
     expect(visitor1.preferences).to eq([])
   end
+
+  describe '#add_preferences' do
+    it 'adds preferences to the visitor array' do
+      visitor1 = Visitor.new('Bruce', 54, '$10')
+
+      expect(visitor1.preferences).to eq([]))
+      visitor1.add_preference(:gentle)
+      visitor1.add_preference(:water)
+      expect(visitor1.preferences).to eq([:gentle, :water])
+    end
+  end
 end
