@@ -7,8 +7,8 @@ RSpec.describe Ride do
 
     expect(ride1).to be_a(Ride)
     expect(ride1.name).to eq("Carousel")
-    expect(reide1.min_height).to eq(24)
-    expect(ride.admission_fee).to eq(1)
+    expect(ride1.min_height).to eq(24)
+    expect(ride1.admission_fee).to eq(1)
     expect(ride1.excitement).to eq(:gentle)
     expect(ride1.total_revenue).to eq(0)
   end
