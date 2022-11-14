@@ -2,7 +2,7 @@ require './lib/ride'
 require './lib/visitor'
 require './lib/carnival'
 
-RSepc.describe Carnival do
+RSpec.describe Carnival do
   it 'exists and has attributes' do
     carnival = Carnival.new('10 hours')
 
