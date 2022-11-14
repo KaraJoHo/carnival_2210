@@ -25,7 +25,7 @@ RSpec.describe Carnival do
   end
 
   describe '#popular_ride' do
-    xit 'can show the most popular ride at the carnival' do
+    it 'can show the most popular ride at the carnival' do
       ride1 = Ride.new({ name: 'Carousel', min_height: 24, admission_fee: 1, excitement: :gentle })
       ride2 = Ride.new({ name: 'Ferris Wheel', min_height: 36, admission_fee: 5, excitement: :gentle })
       visitor1 = Visitor.new('Bruce', 54, '$10')
@@ -38,7 +38,7 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
       ride2.board_rider(visitor1)
 
-      expect
+      expect(carnival.popular_ride).to eq([ride1])
     end
   end
 end
