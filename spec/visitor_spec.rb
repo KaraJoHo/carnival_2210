@@ -51,13 +51,4 @@ RSpec.describe Visitor do
       expect(visitor1.tall_enough?(64)).to eq(false)
     end
   end
-
-  describe '#spend_money' do
-    it 'reduces the riders spending money when they board' do
-      visitor1 = Visitor.new('Bruce', 54, '$10')
-      visitor1.spend_money(1)
-
-      expect(visitor1.spending_money).to eq(9)
-    end
-  end
 end
