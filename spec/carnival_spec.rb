@@ -59,7 +59,6 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
       ride2.board_rider(visitor1)
       expect(carnival.total_revenue).to eq(8)
-
     end
   end
 end
