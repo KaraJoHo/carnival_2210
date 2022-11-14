@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/visitor'
+require './lib/ride'
 
 RSpec.describe Visitor do
   it 'exists and has attributes' do
@@ -34,7 +35,7 @@ RSpec.describe Visitor do
   end
 
   describe '#tall_enough?' do
-    xit 'returns true or false if the visitor is tall enough based on a threshold' do
+    it 'returns true or false if the visitor is tall enough based on a threshold' do
       visitor1 = Visitor.new('Bruce', 54, '$10')
       visitor2 = Visitor.new('Tucker', 36, '$5')
       visitor3 = Visitor.new('Penny', 64, '$15')
@@ -46,8 +47,17 @@ RSpec.describe Visitor do
 
       expect(visitor1.tall_enough?(54)).to eq(true)
       expect(visitor2.tall_enough?(54)).to eq(false)
-      expect(visitor3.tall_enough?).to eq(true)
-      expect(visitor1.tall_enough?).to eq(false)
+      expect(visitor3.tall_enough?(54)).to eq(true)
+      expect(visitor1.tall_enough?(64)).to eq(false)
+    end
+  end
+
+  describe '#spend_money' do
+    it 'reduces the riders spending money when they board' do
+      visitor1 = Visitor.new('Bruce', 54, '$10')
+      visitor1.spend_money(1)
+
+      expect(visitor1.spending_money).to eq(9)
     end
   end
 end

@@ -18,11 +18,11 @@ class Visitor
   end
 
   def tall_enough?(threshold)
-     @visitors.map do |visitor|
-      if visitor.height >= threshold
-        true
-      end
-    end.flatten
+    @height >= threshold
+  end
+
+  def spend_money(cost_of_ride)
+    @spending_money -= cost_of_ride
   end
 
 end
